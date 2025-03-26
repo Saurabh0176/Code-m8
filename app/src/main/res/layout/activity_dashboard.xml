@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardBackgroundColor="@color/bg"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="10dp">
+
+        <TextView
+            android:id="@+id/emailview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="20dp"
+            android:gravity="center_vertical"
+            android:text="email"
+            android:textColor="@color/fontcol"
+            app:drawableStartCompat="@drawable/baseline_account_circle_24" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/cardView"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        app:cardBackgroundColor="@color/bg"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:iss_auto_cycle="true"
+            app:iss_corner_radius="10"
+            app:iss_delay="1000"
+            app:iss_period="1000"
+            app:iss_title_background="@drawable/cm">
+
+        </com.denzcoskun.imageslider.ImageSlider>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/searchbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/cardView2"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        app:cardBackgroundColor="@color/bg"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/fontcol"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- RecyclerView for displaying the hackathons -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hackathonRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchbar"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="20dp"
+
+        tools:listitem="@layout/item_hackathon" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainbtn"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:fabSize="auto"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="MAIN BTN"
+        android:src="@drawable/baseline_assistant_24"
+        android:tint="@color/white"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/posting"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/mainbtn"
+        android:layout_marginEnd="30dp"
+        app:fabSize="auto"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="posting"
+        android:src="@drawable/baseline_add_24"
+        android:tint="@color/white"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/manage"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/posting"
+        android:layout_marginEnd="30dp"
+        app:fabSize="auto"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="Manage Hackathon"
+        android:src="@drawable/baseline_edit_24"
+        android:tint="@color/white"
+        />
+
+
+
+</RelativeLayout>
